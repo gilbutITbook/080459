@@ -1,0 +1,23 @@
+using UnityEngine;
+using UnityEngine.InputSystem;  // 입력을 감지하는 데 필요!
+
+public class PlayerController : MonoBehaviour
+{
+    Rigidbody2D rigid2D;
+    float jumpForce = 600.0f;
+
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+        this.rigid2D = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        // 점프한다
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            this.rigid2D.AddForce(transform.up * this.jumpForce);
+        }
+    }
+}

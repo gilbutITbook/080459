@@ -1,0 +1,18 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class BamsongiGenerator : MonoBehaviour
+{
+    public GameObject bamsongiPrefab;
+
+    void Update()
+    {
+        if (Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+	    GameObject bamsongi = Instantiate(bamsongiPrefab);
+
+	    Ray ray = Camera.main.ScreenPointToRay(Touchscreen.current.primaryTouch.position.value);
+            bamsongi.GetComponent<BamsongiController>().Shoot(ray.direction * 2000);
+        }
+    }
+}

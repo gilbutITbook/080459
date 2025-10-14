@@ -1,0 +1,14 @@
+using UnityEngine;
+
+public class Test : MonoBehaviour
+{
+    void SayHello()
+    {
+        Debug.Log("Hello");
+    }
+
+    void Start()
+    {
+        SayHello();
+    }
+}

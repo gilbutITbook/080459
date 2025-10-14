@@ -1,0 +1,11 @@
+using UnityEngine;
+
+public class Test : MonoBehaviour
+{
+    void Start()
+    {
+        string name;
+        name = "sera";
+        Debug.Log(name);
+    }
+}
